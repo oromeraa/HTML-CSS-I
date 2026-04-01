@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gastronomía Local | Inicio</title>
-  <link rel="stylesheet" href="./styles/main.scss">
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradición de León | Inicio</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+  </head>
+  <body>
+    <include src="components/skip-to-content.html"></include>
 
-  <include src="components/header.html"></include>
+    <include src="components/header.html"></include>
 
-  <main id="main-content">
-    <section>
-      <h2>Bienvenidos a nuestro portal gastronómico</h2>
-      <p>Descubre los mejores sabores, recetas tradicionales y lugares donde disfrutar de la buena mesa.</p>
-      <button id="btn-accion">Sorpresa Gastronómica</button>
-    </section>
-    <span id="home-title"></span>
-  </main>
+    <main id="main-content" class="hero">
+      <span class="home-title">Tradición de</span>
+      <span id="home-typed-title" class="home-title">León</span>
+    </main>
 
-  <include src="components/footer.html"></include>
-  
-  <script type="module" src="./scripts/main.js"></script>
-  <script type="module" src="./scripts/typed.js"></script>
-</body>
+    <include src="components/footer.html"></include>
+    
+    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/typed.js"></script>
+  </body>
 </html>

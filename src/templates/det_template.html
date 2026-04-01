@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.scss">
   <block name="title-detalle">
-    <title>Detalle por defecto</title>
+    <title>Tradición de León | Detalle en construcción</title>
   </block>
 </head>
 <body>
+  <include src="components/skip-to-content.html"></include>
+
   <include src="components/header.html"></include>
 
-  <main>
-    <block name="main-detalle">Contenido del detalle por defecto</block>
+  <main id="main-content">
+    <block name="main-detalle">
+      <section class="detalle-construction">
+        <h2>Este detalle está en construcción</h2>
+        <p>Estamos trabajando para ofrecerte el mejor contenido sobre este detalle. ¡Vuelve pronto!</p>
+        <a href="index.html" class="btn-to-home">Volver al inicio</a>
+      </section>
+    </block>
   </main>
 
   <include src="components/footer.html"></include>
 
   <script type="module" src="./scripts/main.js"></script>
-  <script type="module" src="./scripts/typed.js"></script>
 </body>
 </html>

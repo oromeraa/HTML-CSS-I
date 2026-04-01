@@ -1,7 +1,7 @@
 import Typed from 'typed.js';
 
-var home_title = new Typed('#home-title', {
-  strings: ['Tradición de sabor', 'Tradición de calidad', 'Tradición de excelencia', 'Tradición de León'],
+var home_typed_title = new Typed('#home-typed-title', {
+  strings: ['sabores', 'cocina', 'lugares', 'LEÓN'],
   typeSpeed: 100,
   backSpeed: 0,
   smartBackspace: true,

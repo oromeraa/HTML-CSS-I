@@ -1,7 +1,14 @@
-@use 'abstract/fonts';
+/*------------------------------------*\
+  # Main Stylesheet
+\*------------------------------------*/
 
-#home-title {
-  font-family: 'LeonesaCancilleresca', serif;
-  font-size: 2.5rem;
-  color: #333;
-}
+@use 'abstract/fonts';
+@use 'abstract/variables';
+@use 'abstract/mixins';
+
+@use 'base/reset.scss';
+
+@use 'components/header.scss';
+@use 'components/footer.scss';
+
+@use 'pages/home.scss';
