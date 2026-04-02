@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 1rem;
+    padding: 0.5rem;
 
     background: $leon-gray;
 
@@ -14,26 +14,34 @@
     transition: transform .6s ease, box-shadow .6s ease;
 
     &:hover {
-        transform: translateY(-15px);
+        transform: translateY(-10px);
         box-shadow: 0 8px 20px $shadow-color;
 
         .categoria-card-description,
         .categoria-card-button {
           visibility: visible;
         }
+
+        .categoria-card-image {
+          margin-bottom: 1rem;
+          transform: scale(1.05);
+        }
     }
 
     &-image-wrapper {
       width: 100%;
-      height: 100%;
-      overflow: clip;
+      aspect-ratio: 1;
+      overflow: hidden;
     }
 
     &-image {
       height: 100%;
-      object-fit: fill;
-      flex-shrink: 0;
-      border-radius: $radius $radius 0 0;
+      max-width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: $radius;
+
+      transition: transform .6s ease;
     }
 
     &-content {
@@ -41,6 +49,7 @@
       flex-direction: column;
       justify-content: space-between;
       width: 100%;
+      height: fit-content;
     }
 
     &-title {

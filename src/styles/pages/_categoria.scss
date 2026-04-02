@@ -3,6 +3,6 @@
 .categoria-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 450px);
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
 }
