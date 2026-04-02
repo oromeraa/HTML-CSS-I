@@ -1,70 +1,72 @@
 @use '../abstract/variables' as *;
 
 .categoria-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  overflow: hidden; 
 
-    padding: 0.5rem;
+  background: $leon-gray;
+  border-radius: $radius;
+  box-shadow: 0 4px 15px $shadow-color;   
 
-    background: $leon-gray;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 
-    border-radius: $radius;
-    box-shadow: 0 4px 15px $shadow-color;    
-    transition: transform .6s ease, box-shadow .6s ease;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px $shadow-color;
 
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px $shadow-color;
-
-        .categoria-card-description,
-        .categoria-card-button {
-          visibility: visible;
-        }
-
-        .categoria-card-image {
-          margin-bottom: 1rem;
-          transform: scale(1.05);
-        }
-    }
-
-    &-image-wrapper {
-      width: 100%;
-      aspect-ratio: 1;
-      overflow: hidden;
-    }
-
-    &-image {
-      height: 100%;
-      max-width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: $radius;
-
-      transition: transform .6s ease;
-    }
-
-    &-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: fit-content;
-    }
-
-    &-title {
-
-    }
-
-    &-description {
-      visibility: hidden;
-    }
-
-    &-button {
-      visibility: hidden;
-
-      &:hover {
-
-      }
+    .categoria-card-image {
+      transform: scale(1.05);
     }
   }
+
+  &-image-wrapper {
+    height: 65%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: $radius $radius 0 0;
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &-content {
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.2fr auto;
+    padding: 0.5rem;
+  }
+
+  &-title {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    color: $leon-blue;
+  }
+
+  &-description {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+  
+  &-button {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    background-color: $btn-background;
+    color: $leon-black;
+    border-radius: $radius;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
