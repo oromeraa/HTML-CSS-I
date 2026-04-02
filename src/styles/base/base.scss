@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  # Common styles
+\*------------------------------------*/
+
+@use '../abstract/variables' as *;
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  background-color: rgba($leon-dark-red, 0.8);
+}
+
+footer {
+  background-color: $leon-gray;
+  color: $leon-black;
+  padding: 1rem;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: $leon-green;
+  text-decoration: none;
+}
+
+

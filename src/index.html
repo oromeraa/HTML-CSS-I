@@ -9,14 +9,28 @@
   <body>
     <include src="components/skip-to-content.html"></include>
 
-    <include src="components/header.html"></include>
+    <!-- <include src="components/header.html"></include> -->
 
-    <main id="main-content" class="hero">
-      <img src="./assets/images/home.png" alt="Portada de Tradición de León" class="home-image">
-      <span id="home-typed-title" class="home-title">León</span>
+    <main id="main-content" class="home">
+      <div class="home-video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/sVmfdtrXdhY?si=5kuA7IxxZp6f-Rbg&amp;controls=0&amp;start=5&amp;mute=1&amp;loop=1&amp;playlist=sVmfdtrXdhY&amp;modestbranding=1&amp;rel=0&amp;autoplay=1&amp;showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="home-image-wrapper">
+        <img class="home-image" src="./assets/images/home-map.png" alt="Portada de Tradición de León">
+      </div>
+      <div class="home-typed-wrapper">
+        <span id="home-typed-title" class="home-title"></span>
+      </div>
+      <nav class="home-nav">
+          <ul class="nav-list">
+              <li class="nav-item"><a class="nav-link" href="categoria.html">Sabores</a></li>|
+              <li class="nav-item"><a class="nav-link" href="categoria2.html">Cocina</a></li>|
+              <li class="nav-item"><a class="nav-link" href="categoria3.html">Lugares</a></li>
+          </ul>
+      </nav>
     </main>
 
-    <include src="components/footer.html"></include>
+    <!-- <include src="components/footer.html"></include> -->
     
     <script type="module" src="./scripts/main.js"></script>
     <script type="module" src="./scripts/typed.js"></script>

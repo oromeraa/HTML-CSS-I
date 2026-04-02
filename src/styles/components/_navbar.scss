@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  # Header styles
+\*------------------------------------*/
+
+@use '../abstract/variables' as *;
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  width: 100%;
+  height: 80px;
+  color: $leon-gray;
+  background-color: $nav-background;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  gap: 3rem;
+}
+
+.nav-link {
+  color: $leon-gray;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+.home-link {
+  font-family: $font-leonesaModern;
+  font-size: 1.5rem;
+  color: $leon-gray;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 4px;
+}

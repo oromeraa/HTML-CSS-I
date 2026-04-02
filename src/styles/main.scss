@@ -7,8 +7,12 @@
 @use 'abstract/mixins';
 
 @use 'base/reset.scss';
+@use 'base/base.scss';
 
-@use 'components/header.scss';
+@use 'components/skip-to-content.scss';
+@use 'components/navbar.scss';
 @use 'components/footer.scss';
 
 @use 'pages/home.scss';
+@use 'pages/categoria.scss';
+@use 'pages/detalle.scss';

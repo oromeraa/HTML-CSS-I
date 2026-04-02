@@ -1,0 +1,29 @@
+/*------------------------------------*\
+  # Mixins
+\*------------------------------------*/
+
+
+@use "variables";
+
+@mixin design-for($device) {
+  @if $device == "phone" {
+    @media (max-width: $mqMaxMobile) { 
+      @content;
+    }
+  }
+  @if $device == "tablet" {
+    @media (min-width: $mqMinTablet) { 
+      @content;
+    }
+  }
+  @if $device == "desktop" {
+    @media (min-width: $mqMinDesktop) { 
+      @content;
+    }
+  }
+  @if $device == "large-desktop" {
+    @media (min-width: $mqMaxDesktop) { 
+      @content;
+    }
+  }
+}
