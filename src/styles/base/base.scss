@@ -3,15 +3,18 @@
 \*------------------------------------*/
 
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 :root {
   font-size: 16px;
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  
+  justify-content: stretch;
 }
 
 header {
@@ -29,6 +32,14 @@ footer {
   color: $leon-black;
   padding: 1rem;
   text-align: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 3rem 2rem;
+  max-width: $mqMaxDesktop;
 }
 
 p {

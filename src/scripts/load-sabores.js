@@ -4,6 +4,21 @@
 // import default_item from '../assets/data-json/default.json';
 import sabores from '../assets/data-json/sabores.json';
 
+// Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
+const imgDefault = new URL(`../assets/images/in-construction.jpg`, import.meta.url).href;
+const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg`, import.meta.url).href;
+const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg`, import.meta.url).href;
+
+console.log('Imagen por defecto cargada:', imgDefault);
+console.log('Imagen del chorizo cargada:', imgChorizo);
+console.log('Imagen de la costilla cargada:', imgCostilla);
+
+const imagesMap = {
+  'in-construction.jpg': imgDefault,
+  'front-chorizo-pradera.jpg': imgChorizo,
+  'front-costilla-ezequiel.jpg': imgCostilla
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const gridContenedor = document.getElementById('grid-sabores');
   if (!gridContenedor) console.error('No se encontró el contenedor para los productos.');
@@ -16,22 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const defaultItemsToShow = qtyItemsToShow - qtyItemsLoaded;
   console.log('Cantidad de items por defecto a mostrar:', defaultItemsToShow);
 
-  sabores.items.forEach(sabor => {
-    const imageFixed = new URL(`../assets/images/${sabor.src}`, import.meta.url).href;
+  let htmlToInject = '';
 
-    const cardHTML = `
+  sabores.items.forEach(sabor => {
+    const imageFixed = imagesMap[sabor.src];
+
+    htmlToInject += `
       <div class="categoria-card">
-        <a href="${sabor.link}">
-          <img src="${imageFixed}" alt="${sabor.alt}">
-          <h3>${sabor.title}</h3>
-          <p>${sabor.description}</p>
-        </a>
+        <div class="categoria-card-image-wrapper">
+          <img class="categoria-card-image" src="${imageFixed}" alt="${sabor.alt}">
+        </div>
+        <div class="categoria-card-content">
+            <h3 class="categoria-card-title">${sabor.title}</h3>
+            <p class="categoria-card-description">${sabor.description}</p>
+            <a class="categoria-card-button" href="${sabor.link}">
+              Leer más
+            </a>
+          </div>
+        </div>
       </div>
     `;
 
-    console.log('Inyectando tarjeta:', sabor);
-    
-    gridContenedor.insertAdjacentHTML('beforeend', cardHTML);
+    console.log('Inyectando tarjeta:', sabor);    
   });
   
   if (defaultItemsToShow <= 0) {
@@ -39,21 +60,28 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
   else {
-    const imageFixed = new URL(`../assets/images/${sabores.default.src}`, import.meta.url).href;
+    const imageFixed = imagesMap[sabores.default.src];
 
     const defaultCardHTML = `
       <div class="categoria-card">
-        <a href="${sabores.default.link}">
-          <img src="${imageFixed}" alt="${sabores.default.alt}">
-          <h3>${sabores.default.title}</h3>
-          <p>${sabores.default.description}</p>
-        </a>
+        <div class="categoria-card-image-wrapper">
+          <img class="categoria-card-image" src="${imageFixed}" alt="${sabores.default.alt}">
+        </div>
+        <div class="categoria-card-content">
+          <h3 class="categoria-card-title">${sabores.default.title}</h3>
+          <p class="categoria-card-description">${sabores.default.description}</p>
+          <a class="categoria-card-button" href="${sabores.default.link}">
+            Leer más
+          </a>
+        </div>
       </div>  
     `;
       
     console.log(`Inyectando ${defaultItemsToShow} tarjetas por defecto:`, sabores.default);
     for (let i = 0; i < defaultItemsToShow; i++) {
-      gridContenedor.insertAdjacentHTML('beforeend', defaultCardHTML);
+      htmlToInject += defaultCardHTML;  
     }  
   }
+
+  gridContenedor.insertAdjacentHTML('beforeend', htmlToInject);
 });

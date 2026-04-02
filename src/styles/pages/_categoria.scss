@@ -4,5 +4,5 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+    grid-template-rows: repeat(3, 450px);
 }

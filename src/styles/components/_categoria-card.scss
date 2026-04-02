@@ -3,39 +3,59 @@
 .categoria-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    overflow: hidden;
+    justify-content: space-between;
+
+    padding: 1rem;
 
     background: $leon-gray;
 
     border-radius: $radius;
     box-shadow: 0 4px 15px $shadow-color;    
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform .6s ease, box-shadow .6s ease;
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px $shadow-color;
+        transform: translateY(-15px);
+        box-shadow: 0 8px 20px $shadow-color;
 
-      .activities__card-image {
-        transform: scale(1.1);
-      }
+        .categoria-card-description,
+        .categoria-card-button {
+          visibility: visible;
+        }
     }
 
-    &__image {
+    &-image-wrapper {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      transition: transform .5s ease;
+      height: 100%;
+      overflow: clip;
     }
 
-    &__content {
+    &-image {
+      height: 100%;
+      object-fit: fill;
+      flex-shrink: 0;
+      border-radius: $radius $radius 0 0;
+    }
+
+    &-content {
       display: flex;
       flex-direction: column;
-      padding: 1.5rem;
-      gap: 1rem;
+      justify-content: space-between;
+      width: 100%;
     }
 
-    &__title {
-      color: $leon-blue;
+    &-title {
+
+    }
+
+    &-description {
+      visibility: hidden;
+    }
+
+    &-button {
+      visibility: hidden;
+
+      &:hover {
+
+      }
     }
   }
