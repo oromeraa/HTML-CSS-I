@@ -1,0 +1,41 @@
+@use '../abstract/variables' as *;
+
+.categoria-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+
+    background: $leon-gray;
+
+    border-radius: $radius;
+    box-shadow: 0 4px 15px $shadow-color;    
+    transition: transform .3s ease, box-shadow .3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px $shadow-color;
+
+      .activities__card-image {
+        transform: scale(1.1);
+      }
+    }
+
+    &__image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    &__title {
+      color: $leon-blue;
+    }
+  }

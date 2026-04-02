@@ -8,16 +8,11 @@
     <h1 class="categoria-title">Sabores</h1>
     <p class="categoria-description">En esta sección encontrarás una selección de los sabores más emblemáticos de la gastronomía leonesa, los embutidos artesanales que han sido parte de la cultura culinaria de la región durante generaciones. Cada producto es una muestra de la riqueza y diversidad de los ingredientes locales, así como del saber hacer de los productores que mantienen viva la tradición gastronómica leonesa.</p>
 
-    <div class="categoria-items-wrapper">
-      <a href="./det1.html" class="categoria-item">
-        <img class="categoria-item-image" src="./assets/images/chorizo-de-cerdo-artesano-picante-en-herradura.jpg" alt="Chorizo de cerdo artesano picante en herradura">
-        <h2 class="categoria-item-title">Chorizo picante de La Pradera de Fontún</h2>
-      </a>
-      <a href="./det2.html" class="categoria-item">
-        <img class="categoria-item-image" src="./assets/images/costilla-adobada-curada.jpg" alt="Costilla adobada curada de Ezequiel">
-        <h2 class="categoria-item-title">Costilla adobada curada de Ezequiel</h2>
-      </a>
-    </div>
+    <div id="grid-sabores" class="categoria-grid" data-itemsToShow="9"></div>
+  </block>
+
+  <block name="scripts">
+    <script type="module" src="./scripts/load-sabores.js"></script>
   </block>
 
 </extends>

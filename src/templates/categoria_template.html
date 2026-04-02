@@ -8,23 +8,25 @@
     <title>Tradición de León | Categoría en construcción</title>
   </block>
 </head>
-<body>
-  <include src="components/skip-to-content.html"></include>
+  <body>
+    <include src="components/skip-to-content.html"></include>
 
-  <include src="components/header.html"></include>
+    <include src="components/header.html"></include>
 
-  <main id="main-content">
-    <block name="content">
-      <section class="categoria-construction">
-        <h2>Esta categoría está en construcción</h2>
-        <p>Estamos trabajando para ofrecerte el mejor contenido sobre esta categoría. ¡Vuelve pronto!</p>
-        <a href="index.html" class="btn-to-home">Volver al inicio</a>
-      </section>
-    </block>
-  </main>
+    <main id="main-content">
+      <block name="content">      
+        <section class="categoria-construction">
+          <h1 class="categoria-title">Esta categoría está en construcción</h1>
+          <p class="categoria-description">Estamos trabajando para ofrecerte el mejor contenido sobre esta categoría. ¡Vuelve pronto!</p>
+          <a href="index.html" class="btn-to-home">Volver al inicio</a>
+        </section>
+      </block>
+    </main>
 
-  <include src="components/footer.html"></include>
+    <include src="components/footer.html"></include>
+  </body>
 
-  <script type="module" src="./scripts/main.js"></script>
-</body>
+  <block name="scripts">
+    <script type="module" src="./scripts/main.js"></script>
+  </block>
 </html>

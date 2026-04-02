@@ -1,3 +1,7 @@
+/*------------------------------------*\
+  # Typed text animation
+\*------------------------------------*/
+
 import Typed from 'typed.js';
 
 var home_typed_title = new Typed('#home-typed-title', {
