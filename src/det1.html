@@ -1,9 +1,44 @@
 <extends src="templates/det_template.html">
 
-  <block name="title-detalle">
-    <title>Detalle 1</title>
+  <block name="title">
+    <title>Tradición de León | Chorizo picante de La Pradera de Fontún</title>
   </block>
 
-  <!-- <block name="main-detalle">Contenido detalle 1</block> -->
+    <!-- https://embutidoslapradera.com/embutidos/2-chorizo-de-cerdo-artesano-picante-en-herradura
+    Una imagen destacada representativa del contenido que explica la página
+    Tres párrafos de texto
+    Tres imágenes
+    Un vídeo incrustado de youtube. -->
+
+  <block name="content">
+      <div class="detalle-front-wrapper">
+        <img class="detalle-front-image" src="./assets/images/chorizo-de-cerdo-artesano-picante-en-herradura.jpg" alt="Chorizo de cerdo artesano picante en herradura">
+      </div>
+
+      <div class="detalle-description">
+        <h2 class="detalle-description-title">Chorizo picante de La Pradera de Fontún</h2>
+        <p class="detalle-description-text">Si eres de los que disfrutan con un poco de picante. Si te gusta el sabor auténtico del chorizo, el que tu abuela tenía en el cajón de la mesa de la cocina, el que nada más olerlo te transporta a esos momentos de reunión familiar, de vacaciones en el pueblo. Este chorizo picante de La Pradera de Fontún es para ti.</p>
+          
+        <p class="detalle-description-text">El chorizo de cerdo artesano picante de La Pradera de Fontún es el ejemplo perfecto de "si algo funciona, no lo toques... solo dale chispa". Nació porque los más fieles a su versión agridulce querían un punto extra de intensidad, y la marca ha dado en el clavo: mantienen la base de siempre, con su tripa natural y ese toque de leña de roble, pero metiéndole un pimentón de La Vera picante que es puro espectáculo.</p>
+
+        <p class="detalle-description-text">Lo que mola de este chorizo es que se cura a la antigua, aprovechando que están a más de 2.100 metros en plena montaña leonesa, así que solo lo fabrican cuando el frío de verdad aprieta (de octubre a marzo). Es ese tipo de producto artesano que sabe a lo que tiene que saber: a tradición, a Reserva de la Biosfera y a ese picante que engancha desde el primer bocado.</p>
+      </div>
+
+      <div class="detalle-gallery">
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera1.jpg" alt="Chorizo de la Pradera de Fontún, herradura">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera2.jpg" alt="Chorizo de la Pradera de Fontún, corte">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera3.jpg" alt="Chorizo de la Pradera de Fontún, galardón">
+        </div>
+      </div>
+
+      <div class="video-wrapper">  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bkqLzCop53k?si=egeZAROn7UTX80ko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+  </block>
 
 </extends>

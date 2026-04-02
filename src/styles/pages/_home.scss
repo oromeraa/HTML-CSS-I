@@ -2,6 +2,8 @@
   # Home styles
 \*------------------------------------*/
 
+@use '../abstract/variables' as *;
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -15,7 +17,7 @@
 }
 
 .home-title {
-  font-family: 'LeonesaCancilleresca', serif;
-  font-size: 2.5rem;
-  color: #333;
+  font-family: $font-hero;
+  font-size: 4rem;
+  color: $leon-gold; 
 }

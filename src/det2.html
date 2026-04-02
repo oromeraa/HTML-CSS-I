@@ -1,9 +1,44 @@
 <extends src="templates/det_template.html">
 
-  <block name="title-detalle">
-    <title>Detalle 2</title>
+  <block name="title">
+    <title>Tradición de León | Costilla adobada curada de Ezequiel</title>
   </block>
 
-  <!-- <block name="main-detalle">Contenido detalle 2</block> -->
+    <!-- https://www.embutidosezequiel.com/otras-especialidades/costilla-adobada-curada
+    Una imagen destacada representativa del contenido que explica la página
+    Tres párrafos de texto
+    Tres imágenes
+    Un vídeo incrustado de youtube. -->
+
+  <block name="content">
+      <div class="detalle-front-wrapper">
+        <img class="detalle-front-image" src="./assets/images/costilla-adobada-curada.jpg" alt="Costilla adobada curada de Ezequiel">
+      </div>
+
+      <div class="detalle-description">
+        <h2 class="detalle-description-title">Costilla adobada curada de Ezequiel</h2>
+        <p class="detalle-description-text">Si te gustan los adobos tradiciones. Si te gusta roer un buen hueso con sabor a leña de roble. Si te gusta la cocina de montaña, esa que se cuece a fuego lento y llena la casa de aromas que te hacen salivar. Si quieres que cada bocado te haga cerrar los ojos de manera instintiva. La costilla adobada curada de Ezequiel es para ti.</p>
+          
+        <p class="detalle-description-text">La costilla adobada de Ezequiel es una apuesta segura. Se nota que seleccionan bien el material: costilla de cerdo de calidad con un adobo tradicional de pimentón, sal y ajo que le da ese color y aroma tan característico. El toque maestro, como no podía ser de otra forma viniendo de ellos, es el ahumado con leña de roble, que le da una personalidad que no encuentras en las costillas industriales de supermercado.</p>
+
+        <p class="detalle-description-text">En la cocina es una bomba, sobre todo si le das el tiempo que se merece. Lo suyo es cocerla a fuego lento para que la carne se suelte del hueso y llene de sabor unos buenos garbanzos, un repollo o unos cachelos gallegos. No hace falta que te compliques con la sal ni con especias raras, porque el adobo ya viene equilibrado de serie. Es ese tipo de ingrediente que convierte un plato sencillo en un homenaje a la cocina de montaña.</p>
+      </div>
+
+      <div class="detalle-gallery">
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/costilla-ezequiel1.jpg" alt="Costilla adobada curada, pieza">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/costilla-ezequiel2.jpg" alt="Costilla adobada curada, corte">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/costilla-ezequiel3.jpg" alt="Costilla adobada curada, guiso">
+        </div>
+      </div>
+
+      <div class="video-wrapper">  
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/8rnMuY08hQI?si=IsEFctwNWc31XOV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+  </block>
 
 </extends>
