@@ -1,0 +1,27 @@
+/*------------------------------------*\
+  # Skip to Content style
+\*------------------------------------*/
+@use '../abstract/variables' as *;
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;  
+  width: 100%;
+  height: 1.2rem;
+  z-index: 1000;
+  padding: 0 2rem;
+
+  background-color: $leon-gray;
+
+  color: $leon-black;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;  
+  
+  &:focus {
+    top: 0;
+    outline: none;
+  }
+}
