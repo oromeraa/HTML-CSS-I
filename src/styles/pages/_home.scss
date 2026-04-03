@@ -76,4 +76,16 @@
 .home-nav {  
   width: fit-content;
   border-radius: 1.5rem;
+
+}
+
+.nav-item:nth-child(1)::after{
+  content: '|';
+  margin-left: 2.5rem;
+}
+
+.nav-item:nth-child(2)::after{
+  content: '|';
+  margin-left: 2.5rem;
+
 }
