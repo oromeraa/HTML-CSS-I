@@ -32,10 +32,16 @@ nav {
   margin: 0;
   padding: 0;
 
-  @include design-for('phone') {
-    gap: 1rem;
-    justify-content: center;
+  @include design-for('tablet') {
+    gap: 1.5rem;
+    justify-content: flex-end;
     width: 100%;
+  }
+
+  @include design-for('phone') {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
@@ -59,8 +65,9 @@ nav {
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 4px;
+  text-wrap: nowrap;
 
-  @include design-for('phone') {
+  @include design-for('tablet') {
     font-size: 1.2rem;
   }
 }

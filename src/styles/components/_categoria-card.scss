@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  aspect-ratio: 5 / 6;
+  aspect-ratio: 1;
   overflow: hidden; 
 
   background: $leon-gray;
@@ -24,8 +24,8 @@
   }
 
   &-image-wrapper {
-    height: 65%;
-    aspect-ratio: 1;
+    // height: 65%;
+    // aspect-ratio: 1;
     overflow: hidden;
     border-radius: $radius $radius 0 0;
   }
@@ -38,41 +38,47 @@
   }
 
   &-content {
-    height: 50%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1.2fr auto;
+    // height: fit-content;
+    min-height: 180px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
     padding: 0.5rem;
 
+
     @include design-for('desktop') {
-      height: 30%;
+      height: fit-content;
+      min-height: 120px;
+      flex-grow: 1;
     }
   }
 
   &-title {
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
     color: $leon-blue;
   }
 
   &-description {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
 
+    @include design-for('desktop') {
+      display: none;
+    }
   }
   
   &-button {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
     background-color: $btn-background;
     color: $leon-black;
     border-radius: $radius;
-    width: 100%;
+    width: 50%;    
     padding: 0.5rem;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+
+    margin-top: auto;
+    align-self: flex-end;
+
     font-weight: bolder;
     cursor: pointer;
+
+
   }
 }
