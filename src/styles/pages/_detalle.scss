@@ -15,11 +15,25 @@
   gap: 1rem;
   aspect-ratio: 16 / 9;
 
+  @include design-for('tablet') {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+      "f f i1"
+      "f f i2"
+      "v v i3"
+      "d d d";
+    aspect-ratio: 3 / 4;
+  }
+
   @include design-for('phone') {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-      "f" "i1" "i2" "i3" "v" "d";
+      "f i1" 
+      "i2 i3" 
+      "v v" 
+      "d d";
     aspect-ratio: auto;
   }
 
