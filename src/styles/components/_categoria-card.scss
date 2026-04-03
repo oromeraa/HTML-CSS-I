@@ -1,41 +1,78 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .categoria-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  overflow: hidden; 
 
-    background: $leon-gray;
+  background: $leon-gray;
+  border-radius: $radius;
+  box-shadow: 0 4px 15px $shadow-color;   
 
-    border-radius: $radius;
-    box-shadow: 0 4px 15px $shadow-color;    
-    transition: transform .3s ease, box-shadow .3s ease;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px $shadow-color;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px $shadow-color;
 
-      .activities__card-image {
-        transform: scale(1.1);
-      }
-    }
-
-    &__image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      transition: transform .5s ease;
-    }
-
-    &__content {
-      display: flex;
-      flex-direction: column;
-      padding: 1.5rem;
-      gap: 1rem;
-    }
-
-    &__title {
-      color: $leon-blue;
+    .categoria-card-image {
+      transform: scale(1.05);
     }
   }
+
+  &-image-wrapper {
+    height: 65%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: $radius $radius 0 0;
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+  }
+
+  &-content {
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.2fr auto;
+    padding: 0.5rem;
+
+    @include design-for('desktop') {
+      height: 30%;
+    }
+  }
+
+  &-title {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    color: $leon-blue;
+  }
+
+  &-description {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+
+  }
+  
+  &-button {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    background-color: $btn-background;
+    color: $leon-black;
+    border-radius: $radius;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}

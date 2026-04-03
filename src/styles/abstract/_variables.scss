@@ -20,13 +20,14 @@ $leon-blue: #0072bc;
 $leon-black: #000;
 
 $nav-background: rgba($leon-dark-red, 0.8);
+$btn-background: rgba($leon-green, 0.6);
 $shadow-color: rgba($leon-black, 0.8);
 
 // Breakpoints
 $mqMaxMobile: 767px;
 $mqMinTablet: 768px;
 $mqMinDesktop: 1024px;
-$mqMaxDesktop: 1440px;
+$mqMaxDesktop: 1200px;
 
 // border radius
-$radius: 10px;
+$radius: 15px;

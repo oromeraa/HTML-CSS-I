@@ -13,30 +13,38 @@
 
   <include src="components/header.html"></include>
 
-  <main id="main-content" class="detalle-front">
-    <block name="content">
-      <div class="detalle-front-wrapper">
-        <img class="detalle-front-image" src="./assets/images/in-construction.jpg" alt="Imagen representativa del detalle en construcción">
-      </div>
+  <main id="main-content" class="main-content">
+    <article class="detalle">
+      <block name="content">
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen representativa del detalle en construcción">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
+        </div>
+        <div class="detalle-gallery-wrapper">
+          <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
+        </div>
 
-      <div class="detalle-description">
-        <h2 class="detalle-description__title">Este detalle está en construcción</h2>
-        <p class="detalle-description__text">Estamos trabajando para ofrecerte el mejor contenido.</p>
-        <p class="detalle-description__text">Te invitamos a visitar nuestro sitio web más adelante.</p>
-        <p class="detalle-description__text">¡Vuelve pronto!</p>
-        <a href="index.html" class="btn-to-home">Volver al inicio</a>
-      </div>
+        <div class="detalle-video-wrapper">  
+          <iframe src="https://www.youtube.com/embed/Ep_blZhvI2A?si=O9yQKAGk3Tg6dkQS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
 
-      <div class="detalle-gallery">
-        <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
-        <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
-        <img class="detalle-gallery-image" src="./assets/images/in-construction.jpg" alt="Imagen de la galería">
-      </div>
+        <div class="detalle-description">
+          <h2 class="detalle-description__title">Este detalle está en construcción</h2>
+          <p class="detalle-description__text">Estamos trabajando para ofrecerte el mejor contenido.</p>
+          <p class="detalle-description__text">Te invitamos a visitar nuestro sitio web más adelante.</p>
+          <p class="detalle-description__text">¡Vuelve pronto!</p>
+          <a href="index.html" class="btn-to-home">Volver al inicio</a>
+        </div>
 
-      <div class="video-wrapper">  
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ep_blZhvI2A?si=O9yQKAGk3Tg6dkQS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </block>
+
+        
+      </block>
+    </article>
   </main>
 
   <include src="components/footer.html"></include>

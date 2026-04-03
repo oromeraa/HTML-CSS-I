@@ -3,18 +3,17 @@
 \*------------------------------------*/
 
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .home {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: 100vh;
-
-  // background-image: url("../assets/images/home.png");
-  // background-size: 100% 100%;
+  overflow: hidden;
 }
 
 .home-video-wrapper {
@@ -29,18 +28,18 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  background-color: black;
   filter: brightness(0.4);
 }
 
 .home-video-wrapper iframe {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
-  min-width: 180vh; 
-  transform: translate(-50%, -50%);
+  // min-height: 140vh;
+  min-width: 200vh; 
+  // transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
@@ -53,6 +52,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include design-for('phone') {
+    width: 95%;
+    height: 95%;
+  }
 }
 
 .home-image {
@@ -73,9 +77,37 @@
 
   text-shadow: 4px 4px 8px $shadow-color;
   color: $leon-gold; 
+
+  @include design-for('phone') {
+    font-size: 2rem;
+  }
 }
 
 .home-nav {  
   width: fit-content;
   border-radius: 1.5rem;
+
+  @include design-for('phone') {
+    .nav-list {
+      gap: 1.5rem;
+    }
+  }
+}
+
+.nav-item:nth-child(1)::after{
+  content: '|';
+  margin-left: 2.5rem;
+
+  @include design-for('phone') {
+    margin-left: 1.5rem;
+  }
+}
+
+.nav-item:nth-child(2)::after{
+  content: '|';
+  margin-left: 2.5rem;
+
+  @include design-for('phone') {
+    margin-left: 1.5rem;
+  }
 }

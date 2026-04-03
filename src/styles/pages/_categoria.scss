@@ -1,8 +1,13 @@
+.categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
 
 
 .categoria-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: auto;
 }
