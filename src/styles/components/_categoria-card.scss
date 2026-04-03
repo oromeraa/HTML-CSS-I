@@ -1,4 +1,5 @@
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .categoria-card {
   display: flex;
@@ -42,17 +43,29 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1.2fr auto;
     padding: 0.5rem;
+
+    @include design-for('desktop') {
+      height: 30%;
+    }
   }
 
   &-title {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
     color: $leon-blue;
+
+    @include design-for('desktop') {
+      visibility: hidden;
+    }
   }
 
   &-description {
     grid-column: 1 / 4;
     grid-row: 2 / 3;
+
+    @include design-for('desktop') {
+      visibility: hidden;
+    }
   }
   
   &-button {

@@ -1,28 +1,21 @@
 /*------------------------------------*\
   # Mixins
 \*------------------------------------*/
-
-
-@use "variables";
+@use "variables" as *;
 
 @mixin design-for($device) {
-  @if $device == "phone" {
-    @media (max-width: $mqMaxMobile) { 
-      @content;
-    }
-  }
-  @if $device == "tablet" {
-    @media (min-width: $mqMinTablet) { 
-      @content;
-    }
-  }
   @if $device == "desktop" {
-    @media (min-width: $mqMinDesktop) { 
+    @media (max-width: $mqMaxDesktop) { 
       @content;
     }
-  }
-  @if $device == "large-desktop" {
-    @media (min-width: $mqMaxDesktop) { 
+  } 
+  @else if $device == "tablet" {
+    @media (max-width: $mqMaxTablet) { 
+      @content;
+    }
+  } 
+  @else if $device == "phone" {
+    @media (max-width: $mqMaxMobile) { 
       @content;
     }
   }
