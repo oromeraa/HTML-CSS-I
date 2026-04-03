@@ -1,6 +1,8 @@
 /*------------------------------------*\
   # Detail styles
-\*------------------------------------*/@use "../abstract/variables" as *;
+\*------------------------------------*/
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
 
 .detalle {
   display: grid;
@@ -12,6 +14,14 @@
     "v v i3 d d d";
   gap: 1rem;
   aspect-ratio: 16 / 9;
+
+  @include design-for('phone') {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "f" "i1" "i2" "i3" "v" "d";
+    aspect-ratio: auto;
+  }
 
   &-gallery-wrapper {
     width: 100%;
@@ -43,12 +53,16 @@
   }
 }
 
-/* CORREGIDO: Eliminado el grid-area inútil */
 .detalle-description {
   grid-area: d;
   display: flex;
   flex-direction: column;
   margin-left: 2rem;
+
+  @include design-for('phone') {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
 
   &-title {
     margin-bottom: 1rem;

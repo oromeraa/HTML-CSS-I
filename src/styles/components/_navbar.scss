@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 nav {
   display: flex;
@@ -14,15 +15,28 @@ nav {
   height: 80px;
   color: $leon-gray;
   background-color: $nav-background;
+
+  @include design-for('phone') {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
+    justify-content: center;
+    gap: 0.5rem;
+  }
 }
 
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   margin: 0;
   padding: 0;
-  gap: 3rem;
+
+  @include design-for('phone') {
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .nav-link {
@@ -31,6 +45,11 @@ nav {
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 4px;
+
+  @include design-for('phone') {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
 }
 
 .home-link {
@@ -40,4 +59,8 @@ nav {
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 4px;
+
+  @include design-for('phone') {
+    font-size: 1.2rem;
+  }
 }

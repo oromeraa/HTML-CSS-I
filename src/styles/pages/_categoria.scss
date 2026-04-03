@@ -8,6 +8,6 @@
 .categoria-grid {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: auto;
 }

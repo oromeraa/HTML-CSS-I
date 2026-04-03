@@ -3,6 +3,7 @@
 \*------------------------------------*/
 
 @use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .home {
   position: absolute;
@@ -51,6 +52,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include design-for('phone') {
+    width: 95%;
+    height: 95%;
+  }
 }
 
 .home-image {
@@ -71,21 +77,37 @@
 
   text-shadow: 4px 4px 8px $shadow-color;
   color: $leon-gold; 
+
+  @include design-for('phone') {
+    font-size: 2rem;
+  }
 }
 
 .home-nav {  
   width: fit-content;
   border-radius: 1.5rem;
 
+  @include design-for('phone') {
+    .nav-list {
+      gap: 1.5rem;
+    }
+  }
 }
 
 .nav-item:nth-child(1)::after{
   content: '|';
   margin-left: 2.5rem;
+
+  @include design-for('phone') {
+    margin-left: 1.5rem;
+  }
 }
 
 .nav-item:nth-child(2)::after{
   content: '|';
   margin-left: 2.5rem;
 
+  @include design-for('phone') {
+    margin-left: 1.5rem;
+  }
 }
