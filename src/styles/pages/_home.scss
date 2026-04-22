@@ -52,6 +52,7 @@
   align-items: center;
   justify-content: center;
 
+
   @include design-for('phone') {
     width: 95%;
     height: 95%;
@@ -62,6 +63,8 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+
+  clip-path: url(#home-clip);
 }
 
 .home-typed-wrapper {
