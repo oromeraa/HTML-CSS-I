@@ -1,18 +1,19 @@
 
 @use '../abstract/variables' as *;
 
-.home-outline {
+.home-image__outline {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 .draw-outline {
   fill: none;
 
-  stroke: $leon-gold;
+  stroke: $leon-green;
   stroke-width: 8;
   stroke-dasharray: 1.05;
   stroke-dashoffset: 1;
