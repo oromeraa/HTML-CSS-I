@@ -5,9 +5,9 @@
 import sabores from '../assets/data-json/sabores.json';
 
 // Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg`, import.meta.url).href;
-const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg`, import.meta.url).href;
-const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg`, import.meta.url).href;
+const imgDefault = new URL(`../assets/images/in-construction.jpg?as=webp`, import.meta.url).href;
+const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg?as=webp`, import.meta.url).href;
+const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=webp`, import.meta.url).href;
 
 console.log('Imagen por defecto cargada:', imgDefault);
 console.log('Imagen del chorizo cargada:', imgChorizo);
@@ -16,7 +16,7 @@ console.log('Imagen de la costilla cargada:', imgCostilla);
 const imagesMap = {
   'in-construction.jpg': imgDefault,
   'front-chorizo-pradera.jpg': imgChorizo,
-  'front-costilla-ezequiel.jpg': imgCostilla
+  'front-costilla-ezequiel.jpg': imgCostilla,
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const qtyItemsToShow = gridContenedor.getAttribute('data-itemsToShow');
   const qtyItemsLoaded = sabores.items.length;
-  
+
   console.log('Cantidad de items solicitados en HTML:', qtyItemsToShow);
   console.log('Cantidad total de items en sabores.json:', qtyItemsLoaded);
   const defaultItemsToShow = qtyItemsToShow - qtyItemsLoaded;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let htmlToInject = '';
 
-  sabores.items.forEach(sabor => {
+  sabores.items.forEach((sabor) => {
     const imageFixed = imagesMap[sabor.src];
 
     htmlToInject += `
@@ -52,14 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
 
-    console.log('Inyectando tarjeta:', sabor);    
+    console.log('Inyectando tarjeta:', sabor);
   });
-  
+
   if (defaultItemsToShow <= 0) {
     console.log('No se necesitan tarjetas por defecto, ya se han mostrado suficientes items.');
     return;
-  }
-  else {
+  } else {
     const imageFixed = imagesMap[sabores.default.src];
 
     const defaultCardHTML = `
@@ -76,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>  
     `;
-      
+
     console.log(`Inyectando ${defaultItemsToShow} tarjetas por defecto:`, sabores.default);
     for (let i = 0; i < defaultItemsToShow; i++) {
-      htmlToInject += defaultCardHTML;  
-    }  
+      htmlToInject += defaultCardHTML;
+    }
   }
 
   gridContenedor.insertAdjacentHTML('beforeend', htmlToInject);

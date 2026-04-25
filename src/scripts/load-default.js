@@ -5,7 +5,7 @@
 import default_item from '../assets/data-json/default.json';
 
 // Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg`, import.meta.url).href;
+const imgDefault = new URL(`../assets/images/in-construction.jpg?as=webp`, import.meta.url).href;
 
 console.log('Imagen por defecto cargada:', imgDefault);
 
@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const qtyItemsToShow = gridContenedor.getAttribute('data-itemsToShow');
   const qtyItemsLoaded = default_item.items.length;
-  
+
   console.log('Cantidad de items solicitados en HTML:', qtyItemsToShow);
   console.log('Cantidad total de items en sabores.json:', qtyItemsLoaded);
   const defaultItemsToShow = qtyItemsToShow - qtyItemsLoaded;
   console.log('Cantidad de items por defecto a mostrar:', defaultItemsToShow);
 
   let htmlToInject = '';
-  
+
   const imageFixed = imagesMap[default_item.default.src];
 
   const defaultCardHTML = `
@@ -41,12 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>  
   `;
-    
+
   console.log(`Inyectando ${defaultItemsToShow} tarjetas por defecto:`, default_item.default);
   for (let i = 0; i < defaultItemsToShow; i++) {
-    htmlToInject += defaultCardHTML;  
-  }  
-  
+    htmlToInject += defaultCardHTML;
+  }
 
   gridContenedor.insertAdjacentHTML('beforeend', htmlToInject);
 });
