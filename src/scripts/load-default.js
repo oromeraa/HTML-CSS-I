@@ -5,7 +5,7 @@
 import default_item from '../assets/data-json/default.json';
 
 // Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg?as=webp`, import.meta.url).href;
+const imgDefault = new URL(`../assets/images/in-construction.jpg?as=avif`, import.meta.url).href;
 
 console.log('Imagen por defecto cargada:', imgDefault);
 

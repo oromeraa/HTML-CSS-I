@@ -5,9 +5,9 @@
 import sabores from '../assets/data-json/sabores.json';
 
 // Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg?as=webp`, import.meta.url).href;
-const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg?as=webp`, import.meta.url).href;
-const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=webp`, import.meta.url).href;
+const imgDefault = new URL(`../assets/images/in-construction.jpg?as=avif`, import.meta.url).href;
+const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg?as=avif`, import.meta.url).href;
+const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=avif`, import.meta.url).href;
 
 console.log('Imagen por defecto cargada:', imgDefault);
 console.log('Imagen del chorizo cargada:', imgChorizo);
