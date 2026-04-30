@@ -1,10 +1,20 @@
 <div class="categoria-card">
   <div class="categoria-card-image-wrapper">
-    <img class="categoria-card-image" src="{{src}}?as=webp" alt="{{alt}}" />
+    <img
+      class="categoria-card-image"
+      srcset="
+        ./assets/images/{{src}}?as=webp&width=400   400w,
+        ./assets/images/{{src}}?as=webp&width=600   600w,
+        ./assets/images/{{src}}?as=webp&width=800   800w,
+        ./assets/images/{{src}}?as=webp&width=1200 1200w
+      "
+      src="./assets/images/{{src}}?as=webp"
+      alt="{{alt}}"
+    />
   </div>
   <div class="categoria-card-content">
     <h3 class="categoria-card-title">{{title}}</h3>
     <p class="categoria-card-description">{{description}}</p>
-    <a class="categoria-card-button" href="{{link}}">Ver más</a>
+    <a class="categoria-card-button" href="{{link}}"> Leer más </a>
   </div>
 </div>

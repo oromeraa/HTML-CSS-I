@@ -1,39 +1,28 @@
 /*------------------------------------*\
   # Export data from sabores.json to category
 \*------------------------------------*/
-// import default_item from '../assets/data-json/default.json';
 import sabores from '../assets/data-json/sabores.json';
 
-// Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg`, import.meta.url).href;
-const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg`, import.meta.url).href;
-const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg`, import.meta.url).href;
+let imagesNames = [];
 
-const imgDefaultWebp = new URL(`../assets/images/in-construction.jpg?as=webp`, import.meta.url).href;
-const imgChorizoWebp = new URL(`../assets/images/front-chorizo-pradera.jpg?as=webp`, import.meta.url).href;
-const imgCostillaWebp = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=webp`, import.meta.url).href;
+imagesNames.add(sabores.default.src);
 
-const imgDefaultWebpWide = new URL(`../assets/images/in-construction-wide.jpg?as=webp`, import.meta.url).href;
-const imgChorizoWebpWide = new URL(`../assets/images/front-chorizo-pradera-wide.jpg?as=webp`, import.meta.url).href;
-const imgCostillaWebpWide = new URL(`../assets/images/front-costilla-ezequiel-wide.jpg?as=webp`, import.meta.url).href;
+sabores.items.forEach((item) => {
+  imagesNames.add(item.src);
+});
 
-const imagesMap = {
-  default: {
-    'in-construction.jpg': imgDefault,
-    'front-chorizo-pradera.jpg': imgChorizo,
-    'front-costilla-ezequiel.jpg': imgCostilla,
-  },
-  webp: {
-    'in-construction.jpg': imgDefaultWebp,
-    'front-chorizo-pradera.jpg': imgChorizoWebp,
-    'front-costilla-ezequiel.jpg': imgCostillaWebp,
-  },
-  webpWide: {
-    'in-construction.jpg': imgDefaultWebpWide,
-    'front-chorizo-pradera.jpg': imgChorizoWebpWide,
-    'front-costilla-ezequiel.jpg': imgCostillaWebpWide,
-  },
-};
+let imagesMap = {};
+
+imagesNames.forEach((imageName) => {
+  // Creamos un objeto por cada imagen con todas sus variantes de resolución
+  imagesMap[imageName] = {
+    fallback: new URL(`../assets/images/${imageName}`, import.meta.url).href,
+    webp: new URL(`../assets/images/${imageName}?as=webp`, import.meta.url).href,
+    webp400: new URL(`../assets/images/${imageName}?as=webp&width=400`, import.meta.url).href,
+    webp800: new URL(`../assets/images/${imageName}?as=webp&width=800`, import.meta.url).href,
+    webp1200: new URL(`../assets/images/${imageName}?as=webp&width=1200`, import.meta.url).href,
+  };
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const gridContenedor = document.getElementById('grid-sabores');
@@ -57,18 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     htmlToInject += `
       <div class="categoria-card">
         <div class="categoria-card-image-wrapper">
-          <picture>
-            <source media="(max-width: 1023px)"
-              type="image/webp"
-              srcset="${imagesMap['webp'][sabor.src]}">
-            <source
-              type="image/webp"
-              srcset="${imagesMap['webpWide'][sabor.src]}">
-
-            <img class="categoria-card-image" 
-              src="${imagesMap['default'][sabor.src]}" 
-              alt="${sabor.alt}">
-          </picture>
+          <img class="categoria-card-image" 
+            srcset="${imagesMap[sabor.src]['webp400']} 400w, 
+                    ${imagesMap[sabor.src]['webp800']} 800w, 
+                    ${imagesMap[sabor.src]['webp1200']} 1200w"             
+            src="${imagesMap[sabor.src]['webp']}" 
+            alt="${sabor.alt}">
         </div>
         <div class="categoria-card-content">
           <h3 class="categoria-card-title">${sabor.title}</h3>

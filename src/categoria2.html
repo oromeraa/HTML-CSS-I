@@ -1,19 +1,25 @@
 <extends src="templates/categoria_template.html">
-
   <block name="title">
     <title>Tradición de León | Cocina</title>
   </block>
 
   <block name="content">
     <h1 class="categoria-title">Cocina</h1>
-    <p class="categoria-description">Estamos trabajando para ofrecerte el mejor contenido sobre esta categoría. ¡Vuelve pronto!</p>
+    <p class="categoria-description">
+      Estamos trabajando para ofrecerte el mejor contenido sobre esta categoría. ¡Vuelve pronto!
+    </p>
+    <div id="grid-default" class="categoria-grid" data-itemsToShow="9">
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
 
-    <div id="grid-default" class="categoria-grid" data-itemsToShow="9"></div>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+    </div>
   </block>
-
-  <block name="scripts">
-    <script type="module" src="./scripts/load-default.js"></script>
-  </block>
-
-
 </extends>
