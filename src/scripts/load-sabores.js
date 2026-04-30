@@ -13,17 +13,9 @@ const imgDefaultWebp = new URL(`../assets/images/in-construction.jpg?as=webp`, i
 const imgChorizoWebp = new URL(`../assets/images/front-chorizo-pradera.jpg?as=webp`, import.meta.url).href;
 const imgCostillaWebp = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=webp`, import.meta.url).href;
 
-const imgDefaultAvif = new URL(`../assets/images/in-construction.jpg?as=avif`, import.meta.url).href;
-const imgChorizoAvif = new URL(`../assets/images/front-chorizo-pradera.jpg?as=avif`, import.meta.url).href;
-const imgCostillaAvif = new URL(`../assets/images/front-costilla-ezequiel.jpg?as=avif`, import.meta.url).href;
-
 const imgDefaultWebpWide = new URL(`../assets/images/in-construction-wide.jpg?as=webp`, import.meta.url).href;
 const imgChorizoWebpWide = new URL(`../assets/images/front-chorizo-pradera-wide.jpg?as=webp`, import.meta.url).href;
 const imgCostillaWebpWide = new URL(`../assets/images/front-costilla-ezequiel-wide.jpg?as=webp`, import.meta.url).href;
-
-const imgDefaultAvifWide = new URL(`../assets/images/in-construction-wide.jpg?as=avif`, import.meta.url).href;
-const imgChorizoAvifWide = new URL(`../assets/images/front-chorizo-pradera-wide.jpg?as=avif`, import.meta.url).href;
-const imgCostillaAvifWide = new URL(`../assets/images/front-costilla-ezequiel-wide.jpg?as=avif`, import.meta.url).href;
 
 const imagesMap = {
   default: {
@@ -36,28 +28,21 @@ const imagesMap = {
     'front-chorizo-pradera.jpg': imgChorizoWebp,
     'front-costilla-ezequiel.jpg': imgCostillaWebp,
   },
-  avif: {
-    'in-construction.jpg': imgDefaultAvif,
-    'front-chorizo-pradera.jpg': imgChorizoAvif,
-    'front-costilla-ezequiel.jpg': imgCostillaAvif,
-  },
   webpWide: {
     'in-construction.jpg': imgDefaultWebpWide,
     'front-chorizo-pradera.jpg': imgChorizoWebpWide,
     'front-costilla-ezequiel.jpg': imgCostillaWebpWide,
   },
-  avifWide: {
-    'in-construction.jpg': imgDefaultAvifWide,
-    'front-chorizo-pradera.jpg': imgChorizoAvifWide,
-    'front-costilla-ezequiel.jpg': imgCostillaAvifWide,
-  },
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   const gridContenedor = document.getElementById('grid-sabores');
-  if (!gridContenedor) console.error('No se encontró el contenedor para los productos.');
+  if (!gridContenedor) {
+    console.error('No se encontró el contenedor para los productos.');
+    return;
+  }
 
-  const qtyItemsToShow = gridContenedor.getAttribute('data-itemsToShow');
+  const qtyItemsToShow = gridContenedor.getAttribute('data-items-to-show');
   const qtyItemsLoaded = sabores.items.length;
 
   console.log('Cantidad de items solicitados en HTML:', qtyItemsToShow);
@@ -74,13 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="categoria-card-image-wrapper">
           <picture>
             <source media="(max-width: 1023px)"
-              type="image/avif"
-              srcset="${imagesMap['avif'][sabor.src]}">
-            <source
-              type="image/avif"
-              srcset="${imagesMap['avifWide'][sabor.src]}">
-
-            <source media="(max-width: 1023px)"
               type="image/webp"
               srcset="${imagesMap['webp'][sabor.src]}">
             <source
@@ -93,12 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </picture>
         </div>
         <div class="categoria-card-content">
-            <h3 class="categoria-card-title">${sabor.title}</h3>
-            <p class="categoria-card-description">${sabor.description}</p>
-            <a class="categoria-card-button" href="${sabor.link}">
-              Leer más
-            </a>
-          </div>
+          <h3 class="categoria-card-title">${sabor.title}</h3>
+          <p class="categoria-card-description">${sabor.description}</p>
+          <a class="categoria-card-button" href="${sabor.link}">
+            Leer más
+          </a>
         </div>
       </div>
     `;
@@ -117,13 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="categoria-card-image-wrapper">
           <picture>
             <source media="(max-width: 1023px)"
-              type="image/avif"
-              srcset="${imagesMap['avif'][sabor.src]}">
-            <source
-              type="image/avif"
-              srcset="${imagesMap['avifWide'][sabor.src]}">
-
-            <source media="(max-width: 1023px)"
               type="image/webp"
               srcset="${imagesMap['webp'][sabor.src]}">
             <source
@@ -136,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </picture>
         </div>
         <div class="categoria-card-content">
-            <h3 class="categoria-card-title">${sabor.title}</h3>
-            <p class="categoria-card-description">${sabor.description}</p>
-            <a class="categoria-card-button" href="${sabor.link}">
-              Leer más
-            </a>
+          <h3 class="categoria-card-title">${sabor.title}</h3>
+          <p class="categoria-card-description">${sabor.description}</p>
+          <a class="categoria-card-button" href="${sabor.link}">
+            Leer más
+          </a>
         </div>
       </div>  
     `;

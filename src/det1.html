@@ -5,30 +5,47 @@
 
   <block name="content">
     <div class="detalle-gallery-wrapper">
-      <img
-        class="detalle-gallery-image front-image"
-        src="./assets/images/front-chorizo-pradera.jpg?as=avif"
-        alt="Chorizo de cerdo artesano picante en herradura"
-      />
+      <picture>
+        <source
+          type="image/webp"
+          media="(max-width: 1023px)"
+          srcset="
+            ./assets/images/front-chorizo-pradera-wide.jpg?as=webp&width=400 400w,
+            ./assets/images/front-chorizo-pradera-wide.jpg?as=webp&width=800 800w
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ./assets/images/front-chorizo-pradera.jpg?as=webp&width=1200 1200w,
+            ./assets/images/front-chorizo-pradera.jpg?as=webp&width=1600 1600w
+          "
+        />
+        <img
+          class="detalle-gallery-image front-image"
+          src="./assets/images/front-chorizo-pradera-wide.jpg?as=webp&width=1200"
+          alt="Chorizo picante artesano de La Pradera de Fontún"
+        />
+      </picture>
     </div>
     <div class="detalle-gallery-wrapper">
       <img
         class="detalle-gallery-image"
-        src="./assets/images/chorizo-pradera1.jpg?as=avif"
+        src="./assets/images/chorizo-pradera1.jpg?as=webp"
         alt="Chorizo de la Pradera de Fontún, herradura"
       />
     </div>
     <div class="detalle-gallery-wrapper">
       <img
         class="detalle-gallery-image"
-        src="./assets/images/chorizo-pradera2.jpg?as=avif"
+        src="./assets/images/chorizo-pradera2.jpg?as=webp"
         alt="Chorizo de la Pradera de Fontún, corte"
       />
     </div>
     <div class="detalle-gallery-wrapper">
       <img
         class="detalle-gallery-image"
-        src="./assets/images/chorizo-pradera3.jpg?as=avif"
+        src="./assets/images/chorizo-pradera3.jpg?as=webp"
         alt="Chorizo de la Pradera de Fontún, galardón"
       />
     </div>

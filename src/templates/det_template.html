@@ -18,30 +18,47 @@
       <article class="detalle">
         <block name="content">
           <div class="detalle-gallery-wrapper">
-            <img
-              class="detalle-gallery-image"
-              src="./assets/images/in-construction.jpg?as=avif"
-              alt="Imagen representativa del detalle en construcción"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                media="(max-width: 1023px)"
+                srcset="
+                  ./assets/images/in-construction-wide.jpg?as=webp&width=400 400w,
+                  ./assets/images/in-construction-wide.jpg?as=webp&width=800 800w
+                "
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  ./assets/images/in-construction.jpg?as=webp&width=1200 1200w,
+                  ./assets/images/in-construction.jpg?as=webp&width=1600 1600w
+                "
+              />
+              <img
+                class="detalle-gallery-image front-image"
+                src="./assets/images/in-construction-wide.jpg?as=webp&width=1200"
+                alt="Imagen representativa del detalle en construcción"
+              />
+            </picture>
           </div>
           <div class="detalle-gallery-wrapper">
             <img
               class="detalle-gallery-image"
-              src="./assets/images/in-construction.jpg?as=avif"
+              src="./assets/images/in-construction.jpg?as=webp"
               alt="Imagen de la galería"
             />
           </div>
           <div class="detalle-gallery-wrapper">
             <img
               class="detalle-gallery-image"
-              src="./assets/images/in-construction.jpg?as=avif"
+              src="./assets/images/in-construction.jpg?as=webp"
               alt="Imagen de la galería"
             />
           </div>
           <div class="detalle-gallery-wrapper">
             <img
               class="detalle-gallery-image"
-              src="./assets/images/in-construction.jpg?as=avif"
+              src="./assets/images/in-construction.jpg?as=webp"
               alt="Imagen de la galería"
             />
           </div>
