@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  const qtyItemsToShow = gridContenedor.getAttribute('data-items-to-show');
+  const qtyItemsToShow = gridContenedor.getAttribute('data-itemsToShow');
   const qtyItemsLoaded = sabores.items.length;
 
   console.log('Cantidad de items solicitados en HTML:', qtyItemsToShow);
