@@ -1,31 +1,39 @@
 /*------------------------------------*\
   # Export data from sabores.json to category
 \*------------------------------------*/
-// import default_item from '../assets/data-json/default.json';
 import sabores from '../assets/data-json/sabores.json';
 
-// Solución a eliminar, es una chapuza y me toca hacerlo uno a uno, para esta ocasión lo dejo así pero tengo que buscar la forma de automatizar esto.
-const imgDefault = new URL(`../assets/images/in-construction.jpg`, import.meta.url).href;
-const imgChorizo = new URL(`../assets/images/front-chorizo-pradera.jpg`, import.meta.url).href;
-const imgCostilla = new URL(`../assets/images/front-costilla-ezequiel.jpg`, import.meta.url).href;
+let imagesNames = [];
 
-console.log('Imagen por defecto cargada:', imgDefault);
-console.log('Imagen del chorizo cargada:', imgChorizo);
-console.log('Imagen de la costilla cargada:', imgCostilla);
+imagesNames.add(sabores.default.src);
 
-const imagesMap = {
-  'in-construction.jpg': imgDefault,
-  'front-chorizo-pradera.jpg': imgChorizo,
-  'front-costilla-ezequiel.jpg': imgCostilla
-};
+sabores.items.forEach((item) => {
+  imagesNames.add(item.src);
+});
+
+let imagesMap = {};
+
+imagesNames.forEach((imageName) => {
+  // Creamos un objeto por cada imagen con todas sus variantes de resolución
+  imagesMap[imageName] = {
+    fallback: new URL(`../assets/images/${imageName}`, import.meta.url).href,
+    webp: new URL(`../assets/images/${imageName}?as=webp`, import.meta.url).href,
+    webp400: new URL(`../assets/images/${imageName}?as=webp&width=400`, import.meta.url).href,
+    webp800: new URL(`../assets/images/${imageName}?as=webp&width=800`, import.meta.url).href,
+    webp1200: new URL(`../assets/images/${imageName}?as=webp&width=1200`, import.meta.url).href,
+  };
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const gridContenedor = document.getElementById('grid-sabores');
-  if (!gridContenedor) console.error('No se encontró el contenedor para los productos.');
+  if (!gridContenedor) {
+    console.error('No se encontró el contenedor para los productos.');
+    return;
+  }
 
   const qtyItemsToShow = gridContenedor.getAttribute('data-itemsToShow');
   const qtyItemsLoaded = sabores.items.length;
-  
+
   console.log('Cantidad de items solicitados en HTML:', qtyItemsToShow);
   console.log('Cantidad total de items en sabores.json:', qtyItemsLoaded);
   const defaultItemsToShow = qtyItemsToShow - qtyItemsLoaded;
@@ -33,54 +41,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let htmlToInject = '';
 
-  sabores.items.forEach(sabor => {
-    const imageFixed = imagesMap[sabor.src];
-
+  sabores.items.forEach((sabor) => {
+    // Solo para obtener los datos de imagen y texto, no es un sabor real
     htmlToInject += `
       <div class="categoria-card">
         <div class="categoria-card-image-wrapper">
-          <img class="categoria-card-image" src="${imageFixed}" alt="${sabor.alt}">
+          <img class="categoria-card-image" 
+            srcset="${imagesMap[sabor.src]['webp400']} 400w, 
+                    ${imagesMap[sabor.src]['webp800']} 800w, 
+                    ${imagesMap[sabor.src]['webp1200']} 1200w"             
+            src="${imagesMap[sabor.src]['webp']}" 
+            alt="${sabor.alt}">
         </div>
         <div class="categoria-card-content">
-            <h3 class="categoria-card-title">${sabor.title}</h3>
-            <p class="categoria-card-description">${sabor.description}</p>
-            <a class="categoria-card-button" href="${sabor.link}">
-              Leer más
-            </a>
-          </div>
+          <h3 class="categoria-card-title">${sabor.title}</h3>
+          <p class="categoria-card-description">${sabor.description}</p>
+          <a class="categoria-card-button" href="${sabor.link}">
+            Leer más
+          </a>
         </div>
       </div>
     `;
 
-    console.log('Inyectando tarjeta:', sabor);    
+    console.log('Inyectando tarjeta:', sabor);
   });
-  
+
   if (defaultItemsToShow <= 0) {
     console.log('No se necesitan tarjetas por defecto, ya se han mostrado suficientes items.');
     return;
-  }
-  else {
-    const imageFixed = imagesMap[sabores.default.src];
+  } else {
+    const sabor = sabores.default;
 
     const defaultCardHTML = `
       <div class="categoria-card">
         <div class="categoria-card-image-wrapper">
-          <img class="categoria-card-image" src="${imageFixed}" alt="${sabores.default.alt}">
+          <picture>
+            <source media="(max-width: 1023px)"
+              type="image/webp"
+              srcset="${imagesMap['webp'][sabor.src]}">
+            <source
+              type="image/webp"
+              srcset="${imagesMap['webpWide'][sabor.src]}">
+
+            <img class="categoria-card-image" 
+              src="${imagesMap['default'][sabor.src]}" 
+              alt="${sabor.alt}">
+          </picture>
         </div>
         <div class="categoria-card-content">
-          <h3 class="categoria-card-title">${sabores.default.title}</h3>
-          <p class="categoria-card-description">${sabores.default.description}</p>
-          <a class="categoria-card-button" href="${sabores.default.link}">
+          <h3 class="categoria-card-title">${sabor.title}</h3>
+          <p class="categoria-card-description">${sabor.description}</p>
+          <a class="categoria-card-button" href="${sabor.link}">
             Leer más
           </a>
         </div>
       </div>  
     `;
-      
+
     console.log(`Inyectando ${defaultItemsToShow} tarjetas por defecto:`, sabores.default);
     for (let i = 0; i < defaultItemsToShow; i++) {
-      htmlToInject += defaultCardHTML;  
-    }  
+      htmlToInject += defaultCardHTML;
+    }
   }
 
   gridContenedor.insertAdjacentHTML('beforeend', htmlToInject);
