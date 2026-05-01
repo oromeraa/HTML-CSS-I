@@ -19,19 +19,21 @@
         <block name="content">
           <div class="detalle-gallery-wrapper">
             <picture>
+              <!-- Mobile/Tablet ≤1023px: recorte portrait -->
               <source
                 type="image/webp"
                 media="(max-width: 1023px)"
                 srcset="
-                  ./assets/images/in-construction-wide.jpg?as=webp&width=400 400w,
-                  ./assets/images/in-construction-wide.jpg?as=webp&width=800 800w
+                  ./assets/images/in-construction.jpg?as=webp&width=400 1x,
+                  ./assets/images/in-construction.jpg?as=webp&width=800 2x
                 "
               />
+              <!-- Desktop: recorte panorámico -->
               <source
                 type="image/webp"
                 srcset="
-                  ./assets/images/in-construction.jpg?as=webp&width=1200 1200w,
-                  ./assets/images/in-construction.jpg?as=webp&width=1600 1600w
+                  ./assets/images/in-construction-wide.jpg?as=webp&width=600  1x,
+                  ./assets/images/in-construction-wide.jpg?as=webp&width=1200 2x
                 "
               />
               <img
@@ -45,28 +47,28 @@
             <img
               class="detalle-gallery-image"
               src="./assets/images/in-construction.jpg?as=webp"
-              alt="Imagen de la galería"
+              alt="Imagen representativa del detalle en construcción"
             />
           </div>
           <div class="detalle-gallery-wrapper">
             <img
               class="detalle-gallery-image"
               src="./assets/images/in-construction.jpg?as=webp"
-              alt="Imagen de la galería"
+              alt="Imagen representativa del detalle en construcción"
             />
           </div>
           <div class="detalle-gallery-wrapper">
             <img
               class="detalle-gallery-image"
               src="./assets/images/in-construction.jpg?as=webp"
-              alt="Imagen de la galería"
+              alt="Imagen representativa del detalle en construcción"
             />
           </div>
 
           <div class="detalle-video-wrapper">
             <iframe
               src="https://www.youtube.com/embed/Ep_blZhvI2A?si=O9yQKAGk3Tg6dkQS"
-              title="YouTube video player"
+              title="Vídeo en construcción"
               frameborder="0"
               allow="
                 accelerometer;
@@ -83,10 +85,10 @@
           </div>
 
           <div class="detalle-description">
-            <h2 class="detalle-description__title">Este detalle está en construcción</h2>
-            <p class="detalle-description__text">Estamos trabajando para ofrecerte el mejor contenido.</p>
-            <p class="detalle-description__text">Te invitamos a visitar nuestro sitio web más adelante.</p>
-            <p class="detalle-description__text">¡Vuelve pronto!</p>
+            <h1 class="detalle-description-title">Este detalle está en construcción</h1>
+            <p class="detalle-description-text">Estamos trabajando para ofrecerte el mejor contenido.</p>
+            <p class="detalle-description-text">Te invitamos a visitar nuestro sitio web más adelante.</p>
+            <p class="detalle-description-text">¡Vuelve pronto!</p>
             <a href="index.html" class="btn-to-home">Volver al inicio</a>
           </div>
         </block>
