@@ -6,13 +6,21 @@
   flex-direction: column;
   width: 100%;
   aspect-ratio: 1;
-  overflow: hidden; 
+  overflow: hidden;
 
   background: $leon-gray;
   border-radius: $radius;
-  box-shadow: 0 4px 15px $shadow-color;   
+  box-shadow: 0 4px 15px $shadow-color;
 
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+
+  & h1 {
+    font-family: system-ui, sans-serif;
+    font-size: 1.17em;
+    letter-spacing: normal;
+  }
 
   &:hover {
     transform: translateY(-10px);
@@ -46,7 +54,6 @@
     // justify-content: space-between;
     padding: 0.5rem;
 
-
     @include design-for('desktop') {
       height: fit-content;
       min-height: 120px;
@@ -59,17 +66,16 @@
   }
 
   &-description {
-
     @include design-for('desktop') {
       display: none;
     }
   }
-  
+
   &-button {
     background-color: $btn-background;
     color: $leon-black;
     border-radius: $radius;
-    width: 50%;    
+    width: 50%;
     padding: 0.5rem;
     text-align: center;
 
@@ -78,7 +84,5 @@
 
     font-weight: bolder;
     cursor: pointer;
-
-
   }
 }
