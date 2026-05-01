@@ -1,28 +1,28 @@
 /*------------------------------------*\
   # Detail styles
 \*------------------------------------*/
-@use "../abstract/variables" as *;
-@use "../abstract/mixins" as *;
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as *;
 
 .detalle {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-template-areas: 
-    "f f i1 d d d"
-    "f f i2 d d d"
-    "v v i3 d d d";
+  grid-template-areas:
+    'f f i1 d d d'
+    'f f i2 d d d'
+    'v v i3 d d d';
   gap: 1rem;
   aspect-ratio: 16 / 9;
 
   @include design-for('tablet') {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 
-      "f f i1"
-      "f f i2"
-      "v v i3"
-      "d d d";
+    grid-template-areas:
+      'f f i1'
+      'f f i2'
+      'v v i3'
+      'd d d';
     aspect-ratio: 3 / 4;
   }
 
@@ -30,11 +30,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-      "f i1" 
-      "i2 i3" 
-      "v v" 
-      "d d";
+      'f i1'
+      'i2 i3'
+      'v v'
+      'd d';
     aspect-ratio: auto;
+  }
+
+  & h1 {
+    font-family: system-ui, sans-serif;
   }
 
   &-gallery-wrapper {
@@ -43,8 +47,8 @@
     overflow: hidden;
     border-radius: $radius;
 
-    &:nth-child(1) { 
-      grid-area: f;   
+    &:nth-child(1) {
+      grid-area: f;
     }
 
     &:nth-child(2) {
