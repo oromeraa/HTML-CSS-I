@@ -1,35 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tradición de León | Inicio</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="icon" href="./assets/images/Leon_escudo_chef.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles/main.scss" />
   </head>
   <body>
     <include src="components/skip-to-content.html"></include>
 
-    <!-- <include src="components/header.html"></include> -->
-
     <main id="main-content" class="home">
       <div class="home-video-wrapper">
-        <iframe src="https://www.youtube.com/embed/sVmfdtrXdhY?si=5kuA7IxxZp6f-Rbg&amp;controls=0&amp;start=5&amp;mute=1&amp;loop=1&amp;playlist=sVmfdtrXdhY&amp;modestbranding=1&amp;rel=0&amp;autoplay=1&amp;showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe
+          src="https://www.youtube.com/embed/sVmfdtrXdhY?si=5kuA7IxxZp6f-Rbg&amp;controls=0&amp;start=5&amp;mute=1&amp;loop=1&amp;playlist=sVmfdtrXdhY&amp;modestbranding=1&amp;rel=0&amp;autoplay=1&amp;showinfo=0"
+          title="Vídeo ambiental: gastronomía tradicional de León"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
       <div class="home-image-wrapper">
-        <img class="home-image" src="./assets/images/home-map.png" alt="Portada de Tradición de León">
+        <picture>
+          <source
+            type="image/avif"
+            srcset="
+              ./assets/images/home.png?as=avif&width=480   480w,
+              ./assets/images/home.png?as=avif&width=800   800w,
+              ./assets/images/home.png?as=avif&width=1200 1200w,
+              ./assets/images/home.png?as=avif&width=1600 1600w
+            "
+            sizes="(max-width: 767px) 90vw, 70vw"
+          />
+          <source
+            type="image/webp"
+            srcset="
+              ./assets/images/home.png?as=webp&width=480   480w,
+              ./assets/images/home.png?as=webp&width=800   800w,
+              ./assets/images/home.png?as=webp&width=1200 1200w,
+              ./assets/images/home.png?as=webp&width=1600 1600w
+            "
+            sizes="(max-width: 767px) 90vw, 70vw"
+          />
+          <img
+            class="home-image"
+            src="./assets/images/home.png?width=1200"
+            alt="Mosaico de productos de la provincia de León"
+          />
+        </picture>
+        <include src="components/home-image-outline.html"></include>
       </div>
       <div class="home-typed-wrapper">
-        <span id="home-typed-title" class="home-title"></span>
+        <h1 id="home-typed-title" class="home-title"></h1>
       </div>
       <nav class="home-nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link" href="categoria.html">Sabores</a></li>
-            <li class="nav-item"><a class="nav-link" href="categoria2.html">Cocina</a></li>
-            <li class="nav-item"><a class="nav-link" href="categoria3.html">Lugares</a></li>
-          </ul>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="categoria.html">Sabores</a></li>
+          <li class="nav-item"><a class="nav-link" href="categoria2.html">Cocina</a></li>
+          <li class="nav-item"><a class="nav-link" href="categoria3.html">Lugares</a></li>
+        </ul>
       </nav>
     </main>
-    
+
     <script type="module" src="./scripts/typed.js"></script>
   </body>
 </html>

@@ -1,36 +1,150 @@
 <extends src="templates/det_template.html">
-
   <block name="title">
     <title>Tradición de León | Chorizo picante de La Pradera de Fontún</title>
   </block>
 
   <block name="content">
-      <div class="detalle-gallery-wrapper">
-        <img class="detalle-gallery-image front-image" src="./assets/images/front-chorizo-pradera.jpg" alt="Chorizo de cerdo artesano picante en herradura">
-      </div>
-      <div class="detalle-gallery-wrapper">
-        <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera1.jpg" alt="Chorizo de la Pradera de Fontún, herradura">
-      </div>
-      <div class="detalle-gallery-wrapper">
-        <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera2.jpg" alt="Chorizo de la Pradera de Fontún, corte">
-      </div>
-      <div class="detalle-gallery-wrapper">
-        <img class="detalle-gallery-image" src="./assets/images/chorizo-pradera3.jpg" alt="Chorizo de la Pradera de Fontún, galardón">
-      </div>
+    <div class="detalle-gallery-wrapper">
+      <picture>
+        <source
+          type="image/avif"
+          media="(max-width: 1023px)"
+          srcset="
+            ./assets/images/front-chorizo-pradera-square.jpg?as=avif&width=400 1x,
+            ./assets/images/front-chorizo-pradera-square.jpg?as=avif&width=752 2x
+          "
+        />
+        <source
+          type="image/avif"
+          srcset="
+            ./assets/images/front-chorizo-pradera.jpg?as=avif&width=600  1x,
+            ./assets/images/front-chorizo-pradera.jpg?as=avif&width=1200 2x
+          "
+        />
+        <source
+          type="image/webp"
+          media="(max-width: 1023px)"
+          srcset="
+            ./assets/images/front-chorizo-pradera-square.jpg?as=webp&width=400 1x,
+            ./assets/images/front-chorizo-pradera-square.jpg?as=webp&width=752 2x
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ./assets/images/front-chorizo-pradera.jpg?as=webp&width=600  1x,
+            ./assets/images/front-chorizo-pradera.jpg?as=webp&width=1200 2x
+          "
+        />
+        <img
+          class="detalle-gallery-image front-image"
+          src="./assets/images/front-chorizo-pradera-square.jpg?width=1200"
+          alt="Chorizo picante artesano de La Pradera de Fontún"
+        />
+      </picture>
+    </div>
+    <div class="detalle-gallery-wrapper">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="
+            ./assets/images/chorizo-pradera1.jpg?as=avif&width=600  1x,
+            ./assets/images/chorizo-pradera1.jpg?as=avif&width=1200 2x
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ./assets/images/chorizo-pradera1.jpg?as=webp&width=600  1x,
+            ./assets/images/chorizo-pradera1.jpg?as=webp&width=1200 2x
+          "
+        />
+        <img
+          class="detalle-gallery-image"
+          src="./assets/images/chorizo-pradera1.jpg?width=600"
+          alt="Chorizo de la Pradera de Fontún, herradura"
+        />
+      </picture>
+    </div>
+    <div class="detalle-gallery-wrapper">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="
+            ./assets/images/chorizo-pradera2.jpg?as=avif&width=600  1x,
+            ./assets/images/chorizo-pradera2.jpg?as=avif&width=1200 2x
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ./assets/images/chorizo-pradera2.jpg?as=webp&width=600  1x,
+            ./assets/images/chorizo-pradera2.jpg?as=webp&width=1200 2x
+          "
+        />
+        <img
+          class="detalle-gallery-image"
+          src="./assets/images/chorizo-pradera2.jpg?width=600"
+          alt="Chorizo de la Pradera de Fontún, corte"
+        />
+      </picture>
+    </div>
+    <div class="detalle-gallery-wrapper">
+      <picture>
+        <source
+          type="image/avif"
+          srcset="
+            ./assets/images/chorizo-pradera3.jpg?as=avif&width=600  1x,
+            ./assets/images/chorizo-pradera3.jpg?as=avif&width=1200 2x
+          "
+        />
+        <source
+          type="image/webp"
+          srcset="
+            ./assets/images/chorizo-pradera3.jpg?as=webp&width=600  1x,
+            ./assets/images/chorizo-pradera3.jpg?as=webp&width=1200 2x
+          "
+        />
+        <img
+          class="detalle-gallery-image"
+          src="./assets/images/chorizo-pradera3.jpg?width=600"
+          alt="Chorizo de la Pradera de Fontún, galardón"
+        />
+      </picture>
+    </div>
 
-      <div class="detalle-video-wrapper">  
-        <iframe src="https://www.youtube.com/embed/bkqLzCop53k?si=egeZAROn7UTX80ko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>    
+    <div class="detalle-video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/bkqLzCop53k?si=egeZAROn7UTX80ko"
+        title="Reportaje: La Pradera de Fontún"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
 
-      <div class="detalle-description">
-        <h2 class="detalle-description-title">Chorizo picante de La Pradera de Fontún</h2>
-        <p class="detalle-description-text">Si eres de los que disfrutan con un poco de picante. Si te gusta el sabor auténtico del chorizo, el que tu abuela tenía en el cajón de la mesa de la cocina, el que nada más olerlo te transporta a esos momentos de reunión familiar, de vacaciones en el pueblo. Este chorizo picante de La Pradera de Fontún es para ti.</p>
-          
-        <p class="detalle-description-text">El chorizo de cerdo artesano picante de La Pradera de Fontún es el ejemplo perfecto de "si algo funciona, no lo toques... solo dale chispa". Nació porque los más fieles a su versión agridulce querían un punto extra de intensidad, y la marca ha dado en el clavo: mantienen la base de siempre, con su tripa natural y ese toque de leña de roble, pero metiéndole un pimentón de La Vera picante que es puro espectáculo.</p>
+    <div class="detalle-description">
+      <h1 class="detalle-description-title">Chorizo picante de La Pradera de Fontún</h1>
+      <p class="detalle-description-text">
+        Si eres de los que disfrutan con un poco de picante. Si te gusta el sabor auténtico del chorizo, el que tu
+        abuela tenía en el cajón de la mesa de la cocina, el que nada más olerlo te transporta a esos momentos de
+        reunión familiar, de vacaciones en el pueblo. Este chorizo picante de La Pradera de Fontún es para ti.
+      </p>
 
-        <p class="detalle-description-text">Lo que mola de este chorizo es que se cura a la antigua, aprovechando que están a más de 2.100 metros en plena montaña leonesa, así que solo lo fabrican cuando el frío de verdad aprieta (de octubre a marzo). Es ese tipo de producto artesano que sabe a lo que tiene que saber: a tradición, a Reserva de la Biosfera y a ese picante que engancha desde el primer bocado.</p>
-      </div>
+      <p class="detalle-description-text">
+        El chorizo de cerdo artesano picante de La Pradera de Fontún es el ejemplo perfecto de "si algo funciona, no lo
+        toques... solo dale chispa". Nació porque los más fieles a su versión agridulce querían un punto extra de
+        intensidad, y la marca ha dado en el clavo: mantienen la base de siempre, con su tripa natural y ese toque de
+        leña de roble, pero metiéndole un pimentón de La Vera picante que es puro espectáculo.
+      </p>
 
+      <p class="detalle-description-text">
+        Lo que mola de este chorizo es que se cura a la antigua, aprovechando que están a más de 2.100 metros en plena
+        montaña leonesa, así que solo lo fabrican cuando el frío de verdad aprieta (de octubre a marzo). Es ese tipo de
+        producto artesano que sabe a lo que tiene que saber: a tradición, a Reserva de la Biosfera y a ese picante que
+        engancha desde el primer bocado.
+      </p>
+    </div>
   </block>
-
 </extends>

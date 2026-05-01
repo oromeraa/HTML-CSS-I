@@ -1,18 +1,35 @@
 <extends src="templates/categoria_template.html">
-
   <block name="title">
     <title>Tradición de León | Sabores</title>
   </block>
 
   <block name="content">
     <h1 class="categoria-title">Sabores</h1>
-    <p class="categoria-description">En esta sección encontrarás una selección de los sabores más emblemáticos de la gastronomía leonesa, los embutidos artesanales que han sido parte de la cultura culinaria de la región durante generaciones. Cada producto es una muestra de la riqueza y diversidad de los ingredientes locales, así como del saber hacer de los productores que mantienen viva la tradición gastronómica leonesa.</p>
+    <p class="categoria-description">
+      En esta sección encontrarás una selección de los sabores más emblemáticos de la gastronomía leonesa, los embutidos
+      artesanales que han sido parte de la cultura culinaria de la región durante generaciones. Cada producto es una
+      muestra de la riqueza y diversidad de los ingredientes locales, así como del saber hacer de los productores que
+      mantienen viva la tradición gastronómica leonesa.
+    </p>
 
-    <div id="grid-sabores" class="categoria-grid" data-itemsToShow="9"></div>
+    <div id="grid-default" class="categoria-grid" data-itemsToShow="9">
+      <include src="components/categoria-card.html">
+        { "link": "./det1.html", "src": "front-chorizo-pradera.jpg", "alt": "Chorizo picante de La Pradera de Fontún", "title": "Chorizo picante de La Pradera de Fontún", "description": "El chorizo picante que tenía tu abuela en el pueblo." }
+      </include>
+
+      <include src="components/categoria-card.html">
+        { "link": "./det2.html", "src": "front-costilla-ezequiel.jpg", "alt": "Costilla adobada curada de Ezequiel", "title": "Costilla adobada curada de Ezequiel", "description": "La costilla adobada que necesitas para triunfar en tu próxima reunión." }
+      </include>
+
+      <include src="components/default-categoria-card.html"></include>
+
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+      <include src="components/default-categoria-card.html"></include>
+    </div>
   </block>
-
-  <block name="scripts">
-    <script type="module" src="./scripts/load-sabores.js"></script>
-  </block>
-
 </extends>
