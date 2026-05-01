@@ -24,6 +24,16 @@
       <div class="home-image-wrapper">
         <picture>
           <source
+            type="image/avif"
+            srcset="
+              ./assets/images/home.png?as=avif&width=480   480w,
+              ./assets/images/home.png?as=avif&width=800   800w,
+              ./assets/images/home.png?as=avif&width=1200 1200w,
+              ./assets/images/home.png?as=avif&width=1600 1600w
+            "
+            sizes="(max-width: 767px) 90vw, 70vw"
+          />
+          <source
             type="image/webp"
             srcset="
               ./assets/images/home.png?as=webp&width=480   480w,
@@ -35,7 +45,7 @@
           />
           <img
             class="home-image"
-            src="./assets/images/home.png?as=webp&width=1200"
+            src="./assets/images/home.png?width=1200"
             alt="Mosaico de productos de la provincia de León"
           />
         </picture>
