@@ -20,18 +20,33 @@
           <div class="detalle-gallery-wrapper">
             <picture>
               <source
+                type="image/avif"
+                media="(max-width: 1023px)"
+                srcset="
+                  ./assets/images/in-construction-square.jpg?as=avif&width=400 1x,
+                  ./assets/images/in-construction-square.jpg?as=avif&width=800 2x
+                "
+              />
+              <source
+                type="image/avif"
+                srcset="
+                  ./assets/images/in-construction.jpg?as=avif&width=600  1x,
+                  ./assets/images/in-construction.jpg?as=avif&width=1200 2x
+                "
+              />
+              <source
                 type="image/webp"
                 media="(max-width: 1023px)"
                 srcset="
-                  ./assets/images/in-construction.jpg?as=webp&width=400 1x,
-                  ./assets/images/in-construction.jpg?as=webp&width=800 2x
+                  ./assets/images/in-construction-square.jpg?as=webp&width=400 1x,
+                  ./assets/images/in-construction-square.jpg?as=webp&width=800 2x
                 "
               />
               <source
                 type="image/webp"
                 srcset="
-                  ./assets/images/in-construction-square.jpg?as=webp&width=600  1x,
-                  ./assets/images/in-construction-square.jpg?as=webp&width=1200 2x
+                  ./assets/images/in-construction.jpg?as=webp&width=600  1x,
+                  ./assets/images/in-construction.jpg?as=webp&width=1200 2x
                 "
               />
               <img
