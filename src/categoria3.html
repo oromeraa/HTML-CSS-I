@@ -10,7 +10,9 @@
     </p>
 
     <div id="grid-default" class="categoria-grid" data-itemsToShow="9">
-      <include src="components/default-categoria-card.html"></include>
+      <include src="components/categoria-card.html">
+        { "link": "./detx.html", "src": "in-construction.jpg", "alt": "Contenido en desarrollo", "title": "Ficha en construcción", "description": "Es una ficha dummy para representar contenido en desarrollo.", "loading": "eager", "fetchpriority": "high" }
+      </include>
       <include src="components/default-categoria-card.html"></include>
       <include src="components/default-categoria-card.html"></include>
 

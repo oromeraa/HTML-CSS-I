@@ -9,7 +9,7 @@
         type="image/webp"
         srcset="./assets/images/{{src}}?as=webp&width=400 1x, ./assets/images/{{src}}?as=webp&width=800 2x"
       />
-      <img class="categoria-card-image" src="./assets/images/{{src}}?width=400" alt="{{alt}}" loading="lazy" />
+      <img class="categoria-card-image" src="./assets/images/{{src}}?width=400" alt="{{alt}}" loading="{{loading}}" fetchpriority="{{fetchpriority}}" />
     </picture>
   </div>
   <div class="categoria-card-content">
