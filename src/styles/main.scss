@@ -9,6 +9,8 @@
 @use 'base/reset.scss';
 @use 'base/base.scss';
 
+@use 'abstract/dependencies';
+
 @use 'components/skip-to-content.scss';
 @use 'components/navbar.scss';
 @use 'components/footer.scss';
