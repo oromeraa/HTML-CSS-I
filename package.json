@@ -28,6 +28,7 @@
     "sharp": "^0.33.5"
   },
   "dependencies": {
+    "lite-youtube-embed": "^0.3.4",
     "posthtml-extend": "^0.6.5",
     "posthtml-include": "^2.0.1",
     "typed.js": "^3.0.0"

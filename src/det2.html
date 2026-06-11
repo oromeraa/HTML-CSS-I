@@ -38,6 +38,7 @@
         />
         <img
           class="detalle-gallery-image front-image"
+          fetchpriority="high"
           src="./assets/images/front-costilla-ezequiel-square.jpg?width=1200"
           alt="Costilla adobada curada de Ezequiel"
         />
@@ -48,20 +49,20 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/costilla-ezequiel1.jpg?as=avif&width=600  1x,
-            ./assets/images/costilla-ezequiel1.jpg?as=avif&width=1200 2x
+            ./assets/images/costilla-ezequiel1.jpg?as=avif&width=400  1x,
+            ./assets/images/costilla-ezequiel1.jpg?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/costilla-ezequiel1.jpg?as=webp&width=600  1x,
-            ./assets/images/costilla-ezequiel1.jpg?as=webp&width=1200 2x
+            ./assets/images/costilla-ezequiel1.jpg?as=webp&width=400  1x,
+            ./assets/images/costilla-ezequiel1.jpg?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/costilla-ezequiel1.jpg?width=600"
+          src="./assets/images/costilla-ezequiel1.jpg?width=400"
           alt="Costilla adobada curada, pieza"
           loading="lazy"
         />
@@ -72,20 +73,20 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/costilla-ezequiel2.jpg?as=avif&width=600  1x,
-            ./assets/images/costilla-ezequiel2.jpg?as=avif&width=1200 2x
+            ./assets/images/costilla-ezequiel2.jpg?as=avif&width=400  1x,
+            ./assets/images/costilla-ezequiel2.jpg?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/costilla-ezequiel2.jpg?as=webp&width=600  1x,
-            ./assets/images/costilla-ezequiel2.jpg?as=webp&width=1200 2x
+            ./assets/images/costilla-ezequiel2.jpg?as=webp&width=400  1x,
+            ./assets/images/costilla-ezequiel2.jpg?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/costilla-ezequiel2.jpg?width=600"
+          src="./assets/images/costilla-ezequiel2.jpg?width=400"
           alt="Costilla adobada curada, corte"
           loading="lazy"
         />
@@ -96,37 +97,29 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/costilla-ezequiel3.png?as=avif&width=600  1x,
-            ./assets/images/costilla-ezequiel3.png?as=avif&width=1200 2x
+            ./assets/images/costilla-ezequiel3.png?as=avif&width=400  1x,
+            ./assets/images/costilla-ezequiel3.png?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/costilla-ezequiel3.png?as=webp&width=600  1x,
-            ./assets/images/costilla-ezequiel3.png?as=webp&width=1200 2x
+            ./assets/images/costilla-ezequiel3.png?as=webp&width=400  1x,
+            ./assets/images/costilla-ezequiel3.png?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/costilla-ezequiel3.png?width=600"
+          src="./assets/images/costilla-ezequiel3.png?width=400"
           alt="Costilla adobada curada, guiso"
           loading="lazy"
         />
       </picture>
     </div>
 
-    <div class="detalle-video-wrapper">
-      <iframe
-        loading="lazy"
-        src="https://www.youtube.com/embed/8rnMuY08hQI?si=IsEFctwNWc31XOV4"
-        title="Reportaje: Embutidos Ezequiel"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </div>
+    <include src="components/lite-youtube.html">
+      { "id": "8rnMuY08hQI" }
+    </include>
 
     <div class="detalle-description">
       <h1 class="detalle-description-title">Costilla adobada curada de Ezequiel</h1>

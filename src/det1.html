@@ -38,6 +38,7 @@
         />
         <img
           class="detalle-gallery-image front-image"
+          fetchpriority="high"
           src="./assets/images/front-chorizo-pradera-square.jpg?width=1200"
           alt="Chorizo picante artesano de La Pradera de Fontún"
         />
@@ -48,20 +49,20 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/chorizo-pradera1.jpg?as=avif&width=600  1x,
-            ./assets/images/chorizo-pradera1.jpg?as=avif&width=1200 2x
+            ./assets/images/chorizo-pradera1.jpg?as=avif&width=400  1x,
+            ./assets/images/chorizo-pradera1.jpg?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/chorizo-pradera1.jpg?as=webp&width=600  1x,
-            ./assets/images/chorizo-pradera1.jpg?as=webp&width=1200 2x
+            ./assets/images/chorizo-pradera1.jpg?as=webp&width=400  1x,
+            ./assets/images/chorizo-pradera1.jpg?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/chorizo-pradera1.jpg?width=600"
+          src="./assets/images/chorizo-pradera1.jpg?width=400"
           alt="Chorizo de la Pradera de Fontún, herradura"
           loading="lazy"
         />
@@ -72,20 +73,20 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/chorizo-pradera2.jpg?as=avif&width=600  1x,
-            ./assets/images/chorizo-pradera2.jpg?as=avif&width=1200 2x
+            ./assets/images/chorizo-pradera2.jpg?as=avif&width=400  1x,
+            ./assets/images/chorizo-pradera2.jpg?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/chorizo-pradera2.jpg?as=webp&width=600  1x,
-            ./assets/images/chorizo-pradera2.jpg?as=webp&width=1200 2x
+            ./assets/images/chorizo-pradera2.jpg?as=webp&width=400  1x,
+            ./assets/images/chorizo-pradera2.jpg?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/chorizo-pradera2.jpg?width=600"
+          src="./assets/images/chorizo-pradera2.jpg?width=400"
           alt="Chorizo de la Pradera de Fontún, corte"
           loading="lazy"
         />
@@ -96,37 +97,29 @@
         <source
           type="image/avif"
           srcset="
-            ./assets/images/chorizo-pradera3.jpg?as=avif&width=600  1x,
-            ./assets/images/chorizo-pradera3.jpg?as=avif&width=1200 2x
+            ./assets/images/chorizo-pradera3.jpg?as=avif&width=400  1x,
+            ./assets/images/chorizo-pradera3.jpg?as=avif&width=800 2x
           "
         />
         <source
           type="image/webp"
           srcset="
-            ./assets/images/chorizo-pradera3.jpg?as=webp&width=600  1x,
-            ./assets/images/chorizo-pradera3.jpg?as=webp&width=1200 2x
+            ./assets/images/chorizo-pradera3.jpg?as=webp&width=400  1x,
+            ./assets/images/chorizo-pradera3.jpg?as=webp&width=800 2x
           "
         />
         <img
           class="detalle-gallery-image"
-          src="./assets/images/chorizo-pradera3.jpg?width=600"
+          src="./assets/images/chorizo-pradera3.jpg?width=400"
           alt="Chorizo de la Pradera de Fontún, galardón"
           loading="lazy"
         />
       </picture>
     </div>
 
-    <div class="detalle-video-wrapper">
-      <iframe
-        loading="lazy"
-        src="https://www.youtube.com/embed/bkqLzCop53k?si=egeZAROn7UTX80ko"
-        title="Reportaje: La Pradera de Fontún"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </div>
+    <include src="components/lite-youtube.html">
+      { "id": "bkqLzCop53k" }
+    </include>
 
     <div class="detalle-description">
       <h1 class="detalle-description-title">Chorizo picante de La Pradera de Fontún</h1>
